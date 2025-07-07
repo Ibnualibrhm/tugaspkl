@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin_DashboardController;
+use App\Http\Controllers\Admin_CategoryController;
+use App\Http\Controllers\Admin_UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/admin/dashboard',[Admin_DashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/category',[Admin_CategoryController::class, 'index'])->name('admin.category');
+Route::get('/admin/users',[Admin_UsersController::class, 'index'])->name('admin.users');
