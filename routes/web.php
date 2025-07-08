@@ -19,5 +19,12 @@ use App\Http\Controllers\Admin_UsersController;
 
 
 Route::get('/admin/dashboard',[Admin_DashboardController::class, 'index'])->name('admin.dashboard');
+
 Route::get('/admin/category',[Admin_CategoryController::class, 'index'])->name('admin.category');
+Route::post('/admin/category/tambah',[Admin_CategoryController::class, 'TambahDataCategory'])->name('admin.TambahDataCategory');
+Route::post('/admin/category/hapus',[Admin_CategoryController::class, 'hapusDataCategory'])->name('admin.hapusDataCategory');
+Route::post('/admin/category/edit',[Admin_CategoryController::class, 'editDataCategory'])->name('admin.editDataCategory');
+
+
+
 Route::get('/admin/users',[Admin_UsersController::class, 'index'])->name('admin.users');
