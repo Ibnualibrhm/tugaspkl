@@ -21,19 +21,24 @@
             id="navigation"
         >
             <li class="nav-item">
-                <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                <a href="{{ route('admin.dashboard') }}"
+                    class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     <i class="nav-icon bi bi-palette"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
+
             <li class="nav-item">
-                <a href="{{ route('admin.users') }}" class="nav-link">
+                <a href="{{ route('admin.users') }}"
+                    class="nav-link {{ request()->routeIs('admin.users') ? 'active' : '' }}">
                     <i class="nav-icon bi bi-clipboard-fill"></i>
                     <p>Users</p>
                 </a>
             </li>
+
             <li class="nav-item">
-                <a href="{{ route('admin.category') }}" class="nav-link">
+                <a href="{{ route('admin.category') }}"
+                    class="nav-link {{ request()->routeIs('admin.category') ? 'active' : '' }}">
                     <i class="nav-icon bi bi-box-seam-fill"></i>
                     <p>Category</p>
                 </a>

@@ -21,37 +21,30 @@
                 class="user-image rounded-circle shadow"
                 alt="User Image"
             />
-            <span class="d-none d-md-inline">Ibnu Ali Ibrahim</span>
+            <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
             <!--begin::User Image-->
-            <li class="user-header text-bg-primary">
+            <li class="user-header text-bg-secondary">
                 <img
                 src="{{ asset('assets/img/user2-160x160.jpg')}}"
                 class="rounded-circle shadow"
                 alt="User Image"
                 />
                 <p>
-                Ibnu Ali Ibrahim - Web Developer
-                <small>Member since Nov. 2025</small>
+                {{ Auth::user()->name }}
                 </p>
             </li>
             <!--end::User Image-->
             <!--begin::Menu Body-->
-            <li class="user-body">
-                <!--begin::Row-->
-                <div class="row">
-                <div class="col-4 text-center"><a href="#">Followers</a></div>
-                <div class="col-4 text-center"><a href="#">Sales</a></div>
-                <div class="col-4 text-center"><a href="#">Friends</a></div>
-                </div>
-                <!--end::Row-->
-            </li>
             <!--end::Menu Body-->
             <!--begin::Menu Footer-->
             <li class="user-footer">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                @csrf
+                <button type="submit" class="btn btn-danger btn-flat float-end">Keluar</button>
+                </form>
+
             </li>
             <!--end::Menu Footer-->
             </ul>
